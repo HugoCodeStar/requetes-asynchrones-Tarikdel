@@ -8,6 +8,7 @@ import {ListGroupItem, Container, ListGroup, Col, Row} from "react-bootstrap";
 
 
 
+
 function App() {
   const [data, setData] = useState([]);
   const [username, setUsername] = useState('');
@@ -31,12 +32,13 @@ function App() {
           (
               <Container  key={val.id}>
                   <Row  className="justify-content-md-center">
-                      <Col md={5}>
-                          <ListGroup>
-                              <ListGroupItem>
-                                  {val.name} <Button href={val.html_url}>Repos</Button>
-                              </ListGroupItem>
-                          </ListGroup>
+                      <Col md={7}>
+                          <ul  class="list-group">
+                              <li class="list-group-item d-flex justify-content-between align-items-center">
+                                  {val.name}
+                                  <Button class="badge badge-primary badge-pill" href={val.html_url}>Repos</Button>
+                              </li>
+                          </ul>
                       </Col>
                   </Row>
               </Container>
